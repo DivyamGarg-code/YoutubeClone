@@ -31,10 +31,10 @@ const appRouter = createBrowserRouter([
 function App() {
   return (
     <>
-    <Provider store={appStore}>
+      <Provider store={appStore}>
         <RouterProvider router={appRouter} />
-    </Provider>
-    <Analytics mode={'production'} />
+      </Provider>
+      <Analytics mode={'production'} />
     </>
   );
 }
