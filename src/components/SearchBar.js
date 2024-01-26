@@ -74,7 +74,7 @@ function SearchBar() {
         // console.log(cnt.current);
     }
     return (
-        <div className='w-full max-w-[500px]'>
+        <div className='w-full max-w-[500px] relative'>
             <form className='flex flex-row w-full'>
                 <input
                     className="px-2 py-1 border border-r-0 w-full border-gray-400 focus:outline-none focus:border-gray-800 focus:border-1 rounded-tl-full rounded-bl-full"
@@ -94,7 +94,7 @@ function SearchBar() {
                         setSearchQuery(value);
                     }}
                     onFocus={() => { setShowSuggestions(true) }}
-                    onBlur={() => { setShowSuggestions(false) }}
+                    // onBlur={() => { setShowSuggestions(false) }}
                     onKeyDown={(e) => { searchDropdownKeyTrack(e) }}
                 />
                 <button title="Search" className='bg-gray-200 px-2 hover:bg-gray-300 border border-gray-400 rounded-tr-full rounded-br-full flex justify-center items-center' onClick={(e) => { e.preventDefault(); getSearchResultVideos(searchQuery.trim()); }}><img className="h-7" src={searchIcon} alt="error" /></button>
@@ -107,7 +107,7 @@ function SearchBar() {
                         <img className="h-5" src={searchIcon} alt="searchIcon" />
                         <span>{searchName}</span>
                     </li>
-                }) : <span className='p-2 px-4 italic text-xs'>No Search Results</span>}
+                }) : <span className='p-2 px-4 w-full italic text-xs'>No Search Results</span>}
             </div>}
         </div>
     )
