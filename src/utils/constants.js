@@ -2,8 +2,6 @@ export const btnList = ["All", "Mixes", "Javascript", "Gaming", "Music", "Live",
 
 export const LiveChatCount=25;
 
-const GOOGLE_API_KEY = "AIzaSyC4Q7Y57XSg-7AujnyzeeeN1eKGXj9ycIM";
-
 export const YT_Videos_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=IN&key=${process.env.REACT_APP_YT_API_KEY}`
 
 export const Video_Info_URL = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&key=${process.env.REACT_APP_YT_API_KEY}&id=`
