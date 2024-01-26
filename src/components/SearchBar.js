@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import useThemeColor from '../hooks/useThemeColor';
 
 function SearchBar() {
-    const themeColor=useThemeColor();
+    const themeColor = useThemeColor();
     const navigate = useNavigate();
     const [searchQuery, setSearchQuery] = useState("");
     const getSearchList = useSelector((store) => store.search.cachedResult);
@@ -30,9 +30,10 @@ function SearchBar() {
         }
     }, [searchQuery]);
 
+
     const getSearchSuggestions = async () => {
         // console.log("Search Query ", searchQuery);
-        const data = await fetch(YT_Search_URL + searchQuery);
+        const data = await fetch("https://cors-anywhere.herokuapp.com/"+YT_Search_URL + searchQuery);
         const json = await data.json();
         dispatch(addSearchQuery([json[0], json[1]]));
     }
@@ -83,7 +84,7 @@ function SearchBar() {
                     value={searchQuery}
                     onChange={(e) => {
                         const { value } = e.target;
-                        console.log("Value ",value);
+                        console.log("Value ", value);
                         // --------- Reseting --------------
                         keyList.current = [];
                         keyFlag.current = true;
@@ -103,7 +104,7 @@ function SearchBar() {
 
             {showSuggestions && getSearchList[keySearch.current] && <div className='absolute mt-1 bg-white w-full max-w-[457px] py-2 rounded-br-lg rounded-bl-lg shadow-lg z-10'>
                 {getSearchList[keySearch.current].length ? getSearchList[keySearch.current].map((searchName, index) => {
-                    return <li key={`${searchName}${index}`} className={`p-2 hover:bg-gray-400 flex gap-2 items-center cursor-pointer ${cnt.current === (index + 1)?'bg-gray-600':'bg-white'}`} onMouseDown={() => { getSearchResultVideos(searchName) }}>
+                    return <li key={`${searchName}${index}`} className={`p-2 hover:bg-gray-400 flex gap-2 items-center cursor-pointer ${cnt.current === (index + 1) ? 'bg-gray-600' : 'bg-white'}`} onMouseDown={() => { getSearchResultVideos(searchName) }}>
                         <img className="h-5" src={searchIcon} alt="searchIcon" />
                         <span>{searchName}</span>
                     </li>
