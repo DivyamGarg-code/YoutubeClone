@@ -10,7 +10,7 @@ export const Video_Info_URL = `https://youtube.googleapis.com/youtube/v3/videos?
 
 export const Search_List_URL=`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&key=${GOOGLE_API_KEY}&q=`
 
-export const YT_Search_URL = `http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`
+export const YT_Search_URL = `https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=`
 
 export const searchIcon = "https://ik.imagekit.io/teamTaskTracker/images/search.svg?updatedAt=1704220639003";
 
