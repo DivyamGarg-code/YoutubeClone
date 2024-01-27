@@ -1,23 +1,26 @@
 # Youtube Clone
 
-- Developed the youtube clone including multiple features 
-    - Header 
-    - Sidebar 
-    - SearchBar 
-        - use search API
-        - Optimization
-            - used debouncing effect to reduce the API calls 
-            - cached the search results in the redux store so as not to make API calls for repeated searchQuery
-            - will try to implement LRU cache ie storing only the [50] results storing the most recently used data while removing the least recently used data if the object key's size>50
-    - Watch Page
-    - Nested Comments
-        - Populated the n level nested data through recursion
-    - Live Chat 
-        - used the set interval function to implement the short polling effect 
-        - used faker library which generates random data and add to the list of comments after a specific interval so to show the the live chat effect
-        - user can also comment in the chat box
-    - Dark Mode
-        - Stored the theme[light/dark] in the redux store changing the color based upon the condition
+Developed the youtube clone including multiple features 
+
+# Features
+
+- Header 
+- Sidebar 
+- SearchBar 
+    - use search API
+    - Optimization
+        - used debouncing effect to reduce the API calls 
+        - cached the search results in the redux store so as not to make API calls for repeated searchQuery
+        - will try to implement LRU cache ie storing only the [50] results storing the most recently used data while removing the least recently used data if the object key's size>50
+- Watch Page
+- Nested Comments
+    - Populated the n level nested data through recursion
+- Live Chat 
+    - used the set interval function to implement the short polling effect 
+    - used faker library which generates random data and add to the list of comments after a specific interval so to show the the live chat effect
+    - user can also comment in the chat box
+- Dark Mode
+    - Stored the theme[light/dark] in the redux store changing the color based upon the condition
 
 
 Cache:
@@ -33,3 +36,7 @@ Note:
 
 # Remember:
 We can give unique id to each key either take it from object or we can generate it using Date() which is unique at every time instant
+
+
+
+# Learnings
