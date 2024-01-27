@@ -95,7 +95,7 @@ function SearchBar() {
                         setSearchQuery(value);
                     }}
                     onFocus={() => { setShowSuggestions(true) }}
-                    // onBlur={() => { setShowSuggestions(false) }}
+                    onBlur={() => { setShowSuggestions(false) }}
                     onKeyDown={(e) => { searchDropdownKeyTrack(e) }}
                 />
                 <button title="Search" className='bg-gray-200 px-2 hover:bg-gray-300 border border-gray-400 rounded-tr-full rounded-br-full flex justify-center items-center' onClick={(e) => { e.preventDefault(); getSearchResultVideos(searchQuery.trim()); }}><img className="h-7" src={searchIcon} alt="error" /></button>
